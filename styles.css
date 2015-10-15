@@ -1,0 +1,5 @@
+html{
+	background: url(images/backgroundImage.jpg) no-repeat center fixed;
+	background-size: cover;
+	padding-top: 15px;
+}
