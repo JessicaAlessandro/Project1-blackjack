@@ -15,12 +15,18 @@ html{
     cursor: pointer;
     display: inline-block;
     line-height: 30px;
-    vertical-align: middle
+    vertical-align: middle;
+    background: white;
 }
 
 span.number, span.suit{
     width: 100%;
     display: inline-block;
     text-align: center;
+
+}
+
+#card-stack{
+
 
 }
