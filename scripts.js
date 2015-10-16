@@ -1,5 +1,3 @@
-var playerHand = [];
-var dealerHand = [];
 var cards = [];
 
 //create a card
@@ -37,59 +35,75 @@ function shuffle(deck) {
   return deck;
 }
 
+var dealerHand = [];
 
-
-
-
-
-
-
+var playerHand = [];
 
 // create a function that will deal and display the cards from the deck $('#deal-button');
 $(function () {
 
+	var startGame = function (){
+		deck();
+		shuffle(cards);
+		$dealButton()
+		playerHand
+		dealerHand
+	}
 	// grab DOM elements
 	var $dealButton = $('#deal-button');
 
-	// start game event
-	deck();
-	shuffle(cards);
-	console.log(cards.length);
+	// // start game event
+	// deck();
+	// shuffle(cards);
+	// console.log(cards.length);
 	
 
 	// click events
 	$dealButton.click(function(){
-	 		console.log('clicked');
+	 		// console.log('clicked');
 	 		var newCard1 = cards.pop();
 	 		var newCard2 = cards.pop();
+	 		var newCard3 = cards.pop();
+	 		var newCard4 = cards.pop();
 	 		// put card into playerhand or dealerhand
+
+
+
+
 	 		// somehow . . . 
-	 		console.log(newCard);
-	 		console.log(cards.length);
+	 		// console.log(newCard1);
+	 		// console.log(newCard2)
+	 		// console.log(newCard3)
+	 		// console.log(newCard4)
+	 		// console.log(cards.length);
 	 		// displayPlayerCards();
 	 		// displayDealerCards
 	 		// checkWin();
+
+	 		playerHand.push(newCard1, newCard2)
+	 		dealerHand.push(newCard3, newCard4)
 	 });
+});	
 
-	var displayPlayerCards = function() {
-		// clear the div that contains player cards
-		// render everything within the dealerhand array
-		newCard1
-		newCard2
-
-		$playerHand = $(".player-cards")
-		$playerCards = $('<div></div>')
-		$playerCards.addClass('card');
-		$playerHand.append(playerCards)
-		$div.addClass('card');
-
-		$div.html('' + newDeck[i].name + '<br>' + character + '');
-		$('#container').append($div)
+var $div = $('<div></div>')
+// $div.addClass('card');
+var $dealerSpace = $('#dealer-space');
+$($dealerSpace).append($div)
 
 
+var $div = $('<div></div>')
+// $div.addClass('card');
+var $playerSpace = $('#player-space');
+$($playerSpace).append($div)
 
-	}
+
+// 	var displayPlayerCards = function() {
+// 		// clear the div that contains player cards
+// 		// render everything within the dealerhand array
+
+
+// 	}
 	
-	var displayDealerCards = function(){}
+// 	var displayDealerCards = function(){}
 
-});
+// });

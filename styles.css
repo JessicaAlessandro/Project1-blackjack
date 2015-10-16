@@ -3,30 +3,85 @@ html{
 	background-size: cover;
 }
 
+#container {
+ height: 1000% 
+
+}
+
 .card{
-    width: 40px;
-    height: 60px;
-    border: 1px solid black;
-    text-align: center;
-    margin-right: 5px;
-    margin-bottom: 5px;
-    border-radius: 2px;
-    font-family: courier;
-    cursor: pointer;
-    display: inline-block;
-    line-height: 30px;
-    vertical-align: middle;
-    background: white;
+  width: 40px;
+  height: 60px;
+  border: 1px solid black;
+  text-align: center;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 2px;
+  font-family: courier;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 30px;
+  vertical-align: middle;
+  background: white;
 }
 
 span.number, span.suit{
-    width: 100%;
-    display: inline-block;
-    text-align: center;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 
 }
 
-#card-stack{
-
-
+#dealer-space{
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid black;
+  margin-top: 7px;
 }
+
+#player-space{
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 2px solid black;
+  margin-top: 17%;
+}
+
+#button-container{
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 8px;
+  text-align: center;
+}
+
+.button{
+  width: 80px;
+  height: 40px;
+  font-family: courier;
+  background: red;
+  color: white;
+  font-size: 18px;
+  font-variant: bold;
+}
+
+#bankroll{
+  position: absolute;
+  margin-right: 100%;
+  margin-top: 7.5%;
+  border: 2px solid black;
+  width: 200px;
+  height: 100px;
+  margin-right: 100%;
+  margin-left: 15px;
+  font-family: courier;
+  background: white;
+  color: black; 
+  text-align: center;
+  font-weight: bold;
+}
+
