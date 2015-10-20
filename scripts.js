@@ -82,8 +82,17 @@ function getTotal(hand){
   for (var card = 0;card<hand.length;card++){
     sum[0] += cardWorth(hand[card]);
   }
-  return dropObvious(sum);
 }
+// console.log(getTotal)
+
+//dealer must hit if their total is less than 17
+function dealerMustHit(){
+  if (getTotal(dealerHand) < 17){
+    dealerHand.push(cards.pop())
+  }
+}
+console.log(dealerMustHit);
+
 
 
 
