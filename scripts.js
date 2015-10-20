@@ -94,8 +94,19 @@ function dealerMustHit(){
 console.log(dealerMustHit);
 
 
-
-
+function findWinner(player, dealer){
+  if (player > 21) {
+    return "You Bust!";
+  } else if (dealer > 21) {
+    return "Dealer Busts!";
+  } else if (player == dealer){
+    return "Push!";
+  } else if (player > dealer){
+    return "You Win!";
+  } else {
+    return "You Lose!";
+  }
+}
 
 //create a function that will start the game by clicking the deal button and dealing out the shuffled cards to the players
 $(function () {
@@ -104,6 +115,11 @@ $(function () {
 		deck();
 		shuffle(cards);
 		deal()
+		playerMove();
+		cardValue();
+		getTotal();
+		dealerMustHit();
+		findWinner();
 	})
 })
 
