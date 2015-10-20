@@ -1,28 +1,26 @@
-var cards = [];
-
 //create a card
 var card = function (value, name, suit){
 	this.value = value;
-	this.name = name;
+	this.names = name;
 	this.suit = suit;
 }
-// console.log(card);
 
+// console.log(card);
+var cards = [];
 // create a function that will return an array of all 52 cards
 var deck = function (){
-	this.names = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
+	this.names = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
 	// set the suit to it's unicode character equivialant
-	this.suits = ['\u2665','\u2666','\u2660','\u2663'];
-    
-    for( s = 0; s < this.suits.length; s++ ) {
-        for( n = 0; n < this.names.length; n++ ) {
-					// use an object constructor to create a new card 
-            cards.push( new card( n+1, this.names[n], this.suits[s] ) );
-        }
-    }
-    // return cards;
+	this.suits = ['\u2665','\u2666','\u2660','\u2663'];    
+  for( s = 0; s < this.suits.length; s++ ) {
+      for( n = 0; n < this.names.length; n++ ) {
+				// use an object constructor to create a new card 
+          cards.push( new card( n+1, this.names[n], this.suits[s] ) );
+      }
+  }
 }
 // console.log(deck)
+
 
 // RANDOMize the order of the cards math random
 function shuffle(deck) {
@@ -32,78 +30,65 @@ function shuffle(deck) {
       deck[i] = deck[j];
       deck[j] = temp;
   }
-  return deck;
 }
 
-var dealerHand = [];
 
+// create the two players
+var dealerHand = [];
 var playerHand = [];
 
-// create a function that will deal and display the cards from the deck $('#deal-button');
-$(function () {
+var players = [playerHand,dealerHand];
 
-	var startGame = function (){
+ // deal each player two cards by popping it off the deck 
+var deal = function(){
+	for (var p = 0;p<players.length;p++){
+	  players[p].push(cards.pop());
+	  players[p].push(cards.pop());
+	}
+	
+	//show player the cars and give him/her an option to stay or hit
+	//dealerHand[0] only shows one of the dealers cards
+	}
+}
+
+//create a function that will start the game by clicking the deal button and dealing out the shuffled cards to the players
+$(function () {
+	var $startGame = $('#deal-button');
+	$startGame.click(function(){
 		deck();
 		shuffle(cards);
-		$dealButton()
-		playerHand
-		dealerHand
-	}
-	// grab DOM elements
-	var $dealButton = $('#deal-button');
-
-	// // start game event
-	// deck();
-	// shuffle(cards);
-	// console.log(cards.length);
-	
-
-	// click events
-	$dealButton.click(function(){
-	 		// console.log('clicked');
-	 		var newCard1 = cards.pop();
-	 		var newCard2 = cards.pop();
-	 		var newCard3 = cards.pop();
-	 		var newCard4 = cards.pop();
-	 		// put card into playerhand or dealerhand
+		deal()
+	})
+})
 
 
+// Gameplan
+// • MVP
+// - storage for 52 cards DONE
+// - Each card has value 
+// - Ace can be 1 or 11
+// - Face cards are 10
+// - 21 means blackjack and u win
+// - dealer has to hit if total under 17
+// - players can stay 
+// - player can hit to get another card
+// - cards are random      DONE
+// - cards are distributed into hands   DONE
+// - bust is over 21
+// - draw if tied
+// - buttons on click
+// - some form of visual represenation of your data
+// - I can play more than 1 hand without resetting the page
 
 
-	 		// somehow . . . 
-	 		// console.log(newCard1);
-	 		// console.log(newCard2)
-	 		// console.log(newCard3)
-	 		// console.log(newCard4)
-	 		// console.log(cards.length);
-	 		// displayPlayerCards();
-	 		// displayDealerCards
-	 		// checkWin();
-
-	 		playerHand.push(newCard1, newCard2)
-	 		dealerHand.push(newCard3, newCard4)
-	 });
-});	
-
-var $div = $('<div></div>')
-// $div.addClass('card');
-var $dealerSpace = $('#dealer-space');
-$($dealerSpace).append($div)
+// • Bonuses
+// - Images
+// - Complex game mechanics: insurance, splitting
+// - Betting
+// - Super nice css and stuff
 
 
-var $div = $('<div></div>')
-// $div.addClass('card');
-var $playerSpace = $('#player-space');
-$($playerSpace).append($div)
-
-
-// 	var displayPlayerCards = function() {
-// 		// clear the div that contains player cards
-// 		// render everything within the dealerhand array
-
-
-// 	}
-	
-// 	var displayDealerCards = function(){}
-
-// });
+// Things to consider:
+// 1. Keep it dry: 1 function does 1 thing well
+// 2. Tranforms game talk into Pseudo code
+// 3. If the pseudo code is not 1 function, break it down even further

@@ -33,22 +33,43 @@ span.number, span.suit{
 
 #dealer-space{
   position: relative;
-  width: 200px;
-  height: 100px;
+  width: 250px;
+  height: 150px;
   margin-right: auto;
   margin-left: auto;
   border: 2px solid black;
   margin-top: 7px;
+  color: black; 
+  font-family: courier;
+  text-align: center;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 white,  
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+  font-size: 18px;
 }
+
 
 #player-space{
   position: relative;
-  width: 200px;
-  height: 100px;
+  width: 250px;
+  height: 150px;
   margin-right: auto;
   margin-left: auto;
   border: 2px solid black;
   margin-top: 17%;
+  color: black; 
+  font-family: courier;
+  text-align: center;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 white,  
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+  font-size: 18px;
 }
 
 #button-container{
@@ -67,6 +88,22 @@ span.number, span.suit{
   color: white;
   font-size: 18px;
   font-variant: bold;
+    color: black; 
+  text-align: center;
+  font-weight: bold;
+}
+
+#info{
+  position: absolute;
+  margin-right: 100%;
+  margin-top: 3%;
+  width: 300px;
+  height: 50px;
+  margin-right: 100%;
+  margin-left: 15px;
+  font-family: courier;
+  color: white; 
+  padding-bottom: -30px;
 }
 
 #bankroll{
