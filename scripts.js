@@ -48,8 +48,45 @@ var deal = function(){
 	
 	//show player the cars and give him/her an option to stay or hit
 	//dealerHand[0] only shows one of the dealers cards
+}
+
+function playerMove(){
+  var $info = $('#info');
+	console.log("The dealer is showing: " + dealerHand[0] +
+    "\nYou have: " + playerHand +
+    "\nPlease choose if you would like to hit or stay.")
+
+	action = ''
+	if action = hit{
+		var $hitButton = $('#hit-button')
+		playerHand.push(cards.pop());
 	}
 }
+
+//function to declare value. If an ace, the value is one, if the card is not an ace or and integer- a face card- the value is 10
+function cardValue(card){
+  card = card[0];
+  if (card=='Ace'){
+    return 1;
+  } else if (!!parseInt(card)){
+    return parseInt(card);
+  } else{
+    return 10;
+  }
+}
+// console.log(cardValue)
+
+// get value of the hand
+function getTotal(hand){
+  sum = [0];
+  for (var card = 0;card<hand.length;card++){
+    sum[0] += cardWorth(hand[card]);
+  }
+  return dropObvious(sum);
+}
+
+
+
 
 //create a function that will start the game by clicking the deal button and dealing out the shuffled cards to the players
 $(function () {
@@ -64,7 +101,7 @@ $(function () {
 
 // Gameplan
 // • MVP
-// - storage for 52 cards DONE
+// - storage for 52 cards
 // - Each card has value 
 // - Ace can be 1 or 11
 // - Face cards are 10
@@ -72,8 +109,8 @@ $(function () {
 // - dealer has to hit if total under 17
 // - players can stay 
 // - player can hit to get another card
-// - cards are random      DONE
-// - cards are distributed into hands   DONE
+// - cards are random      
+// - cards are distributed into hands   
 // - bust is over 21
 // - draw if tied
 // - buttons on click
